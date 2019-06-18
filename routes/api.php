@@ -22,3 +22,8 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// ログインユーザー
+Route::get('/user', function () {
+    return Auth::user();
+})->name('user');
